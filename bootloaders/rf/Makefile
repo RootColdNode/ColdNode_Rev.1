@@ -1,7 +1,7 @@
 
 # Configure serial port and path to the toolchain, acording to your settings
-SERPORT = COM1
-ARDUINO_ROOT = "C:\Users\Amir Guidara\AppData\Local\Arduino15"
+SERPORT = /dev/ttyUSB1
+ARDUINO_ROOT = ~/.arduino15
 TOOLCHAIN = $(ARDUINO_ROOT)/packages/panstamp_nrg/tools/msp430-gcc/4.6.3/bin/msp430-
 JAVA_BSL = $(ARDUINO_ROOT)/packages/panstamp_nrg/tools/java-bsl/1.0.0/BsLoader.jar
 
