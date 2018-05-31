@@ -1,14 +1,14 @@
 
-# panStamp NRG Core and platform.
+# ColdNode Core and platform.
 # ------------------------------
 
 # For more info:
 # https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
 
-name=panStamp MSP430 boards
+name=ColdNode MSP430 boards
 version=1.5.6
 
-# NRG compile variables
+# ColdNode compile variables
 # --------------------- 
 
 compiler.path={runtime.tools.msp430-gcc.path}/bin/
