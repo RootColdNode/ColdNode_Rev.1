@@ -6,6 +6,9 @@ This revision incorproates the Wake-Up receiver (WuRx) technology to achieve pur
 The WuRx features a sensitivty of -60 dBm and a data rate of 4 kbps (Manchester). The sensor node is equiped with temperature, humidity and accelerometer sensors.
 The low-power module and its RF availabilty make it suitable for very low traffic wireless sensor networks.
 
-Author: Sadok Bdiri (c) 2018
 
-Boards manager link: `libraries.coldnode.com/package_coldnode_index.json`
+
+#### Latest release [![Latest release](http://libraries.coldnode.com/cn.svg)](https://github.com/RootColdNode/ColdNode_Rev.1)
+#### Boards manager link: `libraries.coldnode.com/package_coldnode_index.json`
+
+Author: Sadok Bdiri (c) 2018
