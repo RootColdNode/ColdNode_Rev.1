@@ -290,32 +290,6 @@ MyUnion.Data=address;
 	(*txpt).data[110]=0xFF;
 }
 void WuRx::setFullPacket(CCPACKET* txpt){
-typedef union myunion{ 
-    uint16_t Data;
-    struct
-    {
-uint16_t :  1;
-uint16_t :  1;
-uint16_t :  1;
-uint16_t :  1;
-uint16_t :  1;
-uint16_t :  1;
-uint16_t :  1;
-uint16_t :  1;
-uint16_t :  1;
-uint16_t :  1;
-uint16_t :  1;
-uint16_t :  1;
-uint16_t :  1;
-uint16_t :  1;
-uint16_t :  1;
-uint16_t MSB :  1;
-    }
-    Str;
-  }
-  Uni;
-  Uni MyUnion;
-MyUnion.Data=0;
   (*txpt).length = 0x3F;  //1 byte carrier burst
   // Rest of the carrier burst (15 Bytes):
     for(int i=0;i<(*txpt).length;i++){

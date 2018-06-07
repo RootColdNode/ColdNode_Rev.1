@@ -33,6 +33,7 @@
 
 #include "wiring.h"
 #include "panstamp.h"
+#include "coldnode.h"
 
 // the clock source is set so that watch dog timer (WDT) ticks every clock
 // cycle (F_CPU), and the watch dog timer ISR is called every 512 ticks
@@ -74,6 +75,7 @@ void init(void)
 
   // Init panStamp object
   panstamp.init();
+  coldnode.init();
 
   enableWatchDogIntervalMode();
   __eint();

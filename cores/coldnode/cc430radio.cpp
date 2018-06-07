@@ -20,6 +20,8 @@
  * 
  * Author: Daniel Berenguer
  * Creation date: 05/30/2013
+ * Author: Sadok Bdiri
+ * Revision date: 07/06/2018
  */
 
 #include "cc430radio.h"

@@ -97,27 +97,25 @@ static const uint8_t A11 = 128 + 11; // special. This is Vcc/2
 #define RFSwitch        15  
 // WuRx VCC Pin
 #define WuRxVCC        14  
-// LD-BOARD definitions
-#define HGM     20
-#define LNA_EN  19
-#define PA_EN   18
+//Decoder SPI ports
+#define AS39xx_CS 	18
+#define AS39xx_SCL 	17
+#define AS39xx_SDI  16
+//Decoder Interrupt pin
+#define IntP             3      
 
-//                            ANT
-//                         GND | GND
-//                       GND | | | GND
-//                     GND | | | | | GND
-//                       | | | | | | |
+
 //                      +-------------+
-//         (D17) P3.1  1|     ||||    |27  P3.2 (D18) (PWM)
-//         (D16) P3.0  2|             |26  P3.3 (D19) (PWM)
-//         (D15) P2.7  3|             |25  P3.4 (D20)
-//         (D14) P2.6  4|             |24  P3.5 (D21)
-//      (D13/A5) P2.5  5|             |23  P3.6 (D22)
-//      (D12/A4) P2.4  6|             |22  P1.0 (SPI_MOSI) (D0)
-//      (D11/A3) P2.3  7|             |21  P1.1 (SPI_MISO) (D1) (PWM)
-//      (D10/A2) P2.2  8|             |20  P1.2 (SPI_SCK) (D2) (PWM)
-//       (D9/A1) P2.1  9|             |19  P1.3 (I2C_SDA) (D3) (PWM)
-//       (D8/A0) P2.0 10|             |18  P1.4 (I2C_SCL) (D4) (PWM)
+//         				|     	      |
+//         				|             |
+//         				|             |
+//         				|             |
+//     					|             |
+//      				|             |
+//      				|             |
+//      				|             |
+//       				|             |
+//       				|             |18  P1.4 (I2C_SCL) (D4) (PWM)
 //                      +-------------+
 //                       | | | | | | |
 //                     TST | | | | | P1.5 (D5/RXD)

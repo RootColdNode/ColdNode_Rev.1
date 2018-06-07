@@ -20,68 +20,11 @@
  * 
  * Author: Daniel Berenguer
  * Creation date: 06/03/2013
+   Author: Sadok Bdiri
+   Revision date: 07/06/2018
  */
 
 #include "panstamp.h"
-
-/**
- * radioISR
- *
- * Radio interrupt routine
- */
-__attribute__((interrupt(CC1101_VECTOR)))
-void radioISR(void)
-{
-  unsigned int coreIntSource = RF1AIV;            // Radio Core      interrupt register
-
-  // Radio Core interrupt
-  if(coreIntSource)
-  {
-    // Check for SYNC interrupt
-    if(coreIntSource == RF1AIV_RFIFG9)
-    {
-      if(MRFI_SYNC_PIN_INT_IS_ENABLED())
-      {
-        static CCPACKET ccPacket;
-
-        /*  clear the sync pin interrupt, run sync pin ISR */
-        /*
-         *  NOTE!  The following macro clears the interrupt flag but it also *must*
-         *  reset the interrupt capture.  In other words, if a second interrupt
-         *  occurs after the flag is cleared it must be processed, i.e. this interrupt
-         *  exits then immediately starts again.  Most microcontrollers handle this
-         *  naturally but it must be verified for every target.
-         */
-
-        MRFI_CLEAR_SYNC_PIN_INT_FLAG();
-        MRFI_DISABLE_SYNC_PIN_INT();
-
-        // Any packet waiting to be read?
-        if (panstamp.radio.receiveData(&ccPacket) > 0)
-        {
-          // Is CRC OK?
-          if (ccPacket.crc_ok)
-          {            
-            if (panstamp.ccPacketReceived != NULL)
-              panstamp.ccPacketReceived(&ccPacket);
-          }
-        }
-
-        MRFI_ENABLE_SYNC_PIN_INT();
-      }
-    }
-    // Check for RF_RDY (Event1 WOR) interrupt
-    else if(coreIntSource == RF1AIV_RFIFG14)
-    {
-      RF1AIE |= BIT9 + BIT1;
-      RF1AIFG &= ~(BIT9 + BIT1);
-      RF1AIES |= BIT9; // Falling edge of RFIFG9
-      panstamp.radio.setRxState();
-      __bic_SR_register_on_exit(LPM3_bits);
-    }
-  }
-}
-
 /**
  * PANSTAMP
  *
