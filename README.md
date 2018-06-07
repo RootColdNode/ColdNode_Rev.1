@@ -8,7 +8,7 @@ The low-power module and its RF availabilty make it suitable for very low traffi
 
 
 
-#### Latest release [![Latest release](http://libraries.coldnode.com/cn.svg)](https://github.com/RootColdNode/ColdNode_Rev.1)
-#### Boards manager link: `libraries.coldnode.com/package_coldnode_index.json`
+[![Latest release](http://libraries.coldnode.com/cn.svg)](https://github.com/RootColdNode/ColdNode_Rev.1)
+#### Boards manager link: `http://libraries.coldnode.com/package_coldnode_index.json`
 
 Author: Sadok Bdiri (c) 2018
